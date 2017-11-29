@@ -1,13 +1,13 @@
 #!/bin/sh
 
-rm *.aux
-rm *.bbl
-rm *.blg
-rm *.log
-rm *~
-rm *.dvi
+rm -f *.aux
+rm -f *.bbl
+rm -f *.blg
+rm -f *.log
+rm -f *~
+rm -f *.dvi
 
-pdflatex paper.tex && pdflatex paper.tex && pdflatex paper.tex
+pdflatex paper.tex
 bibtex paper
-pdflatex paper.tex && pdflatex paper.tex && pdflatex paper.tex
+pdflatex paper.tex && pdflatex paper.tex
 
