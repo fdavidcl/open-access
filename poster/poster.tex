@@ -20,11 +20,11 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[a0,portrait]{a0poster}
-
+\usepackage[fontsize=38]{scrextend}
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
-\columnsep=100pt % This is the amount of white space between the columns in the poster
-\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+\columnsep=6em % This is the amount of white space between the columns in the poster
+\columnseprule=0.5pt % This is the thickness of the black line between the columns in the poster
 
 \usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
@@ -37,6 +37,8 @@
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
+\usepackage{hyperref}
+%\setlength{\parskip}{10cm}
 
 % Timeline
 \usepackage{colortbl}
@@ -51,6 +53,7 @@
 \usepackage{fontspec}
 \setsansfont{Fira Sans}
 \setmainfont{Crimson Text}
+\usepackage[most]{tcolorbox}
 
 \usepackage{sectsty}
 \allsectionsfont{\sffamily}
@@ -61,9 +64,7 @@
 \definecolor{gray}{rgb}{0.5, 0.5, 0.5}
 \definecolor{kellygreen}{rgb}{0.3, 0.73, 0.09}
 
-\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
-
-\usepackage{wrapfig}
+\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-1.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
 
 \begin{document}
 
@@ -110,32 +111,41 @@
   %   Introduction
   %----------------------------------------------------------------------------------------
 \color{Black} % SaddleBrown color for the introduction
-  \section*{Introducción}
-  \begin{itemize}
-  \item En 1665 aparecen primeras revistas, a los autores no se les pagaba por publicar en ellas.
-  \item Ya que éstas se hicieron populares, los autores siguieron publicando en ellas, por impacto más que por dinero.
-  \item \textbf{Problema:} Los precios comenzaron a subir hasta hacerse inasequibles. Hasta la aparición de internet como alternativa. Sin embargo, las revistas siguen cobrando demasiado en la actualizad, a pesar de no tener a penas gastos de publicación y edición.
-  \end{itemize}
+\section*{Introducción}
 
-  \section*{Open Access (OA)}
-  \begin{itemize}
-  \item Tras la llegada de internet, nació \textbf{Open Access}, una forma de \textbf{acceder a la información}, no un \textbf{modelo de negocio}. Permite acceder a la información de \textbf{forma gratuita}. NO es incompatible con el uso de CopyRight.
-  \item Alternativa al modelo tradicional, donde los autores a veces \textbf{pagan} por publicar y los lectores también deben \textbf{pagar} por acceder a las publicaciones.
-  \item \textit{Formas de fomentar OA}
+\begin{tcolorbox}[colback=openaccess!5!white,colframe=openaccess!75!black,boxsep=1cm]
+  \setlength{\parskip}{0.5cm}
+  
+  En 1665 aparecen primeras revistas, a los autores no se les pagaba por publicar en ellas.
+
+  Ya que éstas se hicieron populares, los autores siguieron publicando en ellas, por impacto más que por dinero.
+
+  \textbf{Problema:} Los precios comenzaron a subir hasta hacerse inasequibles. Hasta la aparición de internet como alternativa. Sin embargo, las revistas siguen cobrando demasiado en la actualizad, a pesar de no tener a penas gastos de publicación y edición.
+  
+\end{tcolorbox}
+
+\section*{Open Access (OA)}
+\begin{tcolorbox}[colback=openaccess!5!white,colframe=openaccess!75!black,boxsep=1cm]
+  \setlength{\parskip}{0.5cm}
+  
+\textbf{Open Access} es una forma de \textbf{acceder a la información}, no un modelo de negocio. Permite \textbf{acceso gratuito}. Compatible con el uso de copyright. Alternativa al modelo tradicional, donde los lectores también deben pagar por acceder a las publicaciones.
+
+Formas de fomentar OA
     \begin{itemize}
     \item Dejar una copia del artículo en un repositorio OA (\textbf{arXiv}).
     \item Publicar en revistas OA (\textbf{BioMed, Public Library of Science}).
     \item Subir una copia del artículo original a una web personal.
     \item Publicar en revistas híbridas, donde el autor paga para hacer el artículo OA.
     \end{itemize}
-  \item Las revistas OA siguen un código de colores:
+
+    Las revistas OA siguen un código de colores:
     \begin{itemize}
-    \item[] \tikzcircle[oldgold, fill=oldgold]{50pt} Acceso libre sin retraso.
-    \item[] \tikzcircle[kellygreen, fill=kellygreen]{50pt} Permite el archivo de trabajos ya publicados.
-    \item[] \tikzcircle[palegreen, fill=palegreen]{50pt} Permite el archivo de trabajos que se han mandado a revisión pero aún no publicados.
-    \item[] \tikzcircle[gray, fill=gray]{50pt} Indica que no cumple ninguna de las anteriores.
+    \item[] \tikzcircle[oldgold, fill=oldgold]{25pt}\quad Acceso libre sin retraso
+    \item[] \tikzcircle[kellygreen, fill=kellygreen]{25pt}\quad Archivado de trabajos ya publicados
+    \item[] \tikzcircle[palegreen, fill=palegreen]{25pt}\quad Archivado de trabajos en revisión
+    \item[] \tikzcircle[gray, fill=gray]{25pt}\quad No cumple ninguna de las anteriores
     \end{itemize}
-  \end{itemize}
+\end{tcolorbox}
 
 
  %----------------------------------------------------------------------------------------
@@ -143,30 +153,29 @@
   %----------------------------------------------------------------------------------------
 
   \color{Black} % SaddleBrown color for the introduction
-  \section*{Modelo tradicional: problemática y escándalos}
-  %
-  \begin{itemize}
-  \item $\downarrow$ Coste de publicación, maquetación y distribución VS $\uparrow$ coste de revistas
-  \item Bases de la carrera investigadora:
-    \begin{itemize}
-    \item publicacionesde calidad 
-    \item en revistas de calidad
-    \end{itemize}
-  \item Los investigadores revisan de forma voluntaria
-  \item Editoriales sacan beneficios elevados aprovechando el voluntariado (Elsevier, Springer) 
-  \item Boicot a Elsevier por varios investigadores
-  \item Coste de la revista (precio por pág)
- \begin{itemize}
-    \item The Annals of Mathematics- 0.13/pág
-    \item Elsevier -1.30/pág
-    \end{itemize}
-  \item Escándalos de Elsevier:
-    \begin{itemize}
-  	\item citaciones mutuas de Elsevier con  Chaos, Solitions \& Fractals
-  	\item recibió dinero de farmaceuticas para publicar artículos
-  	\end{itemize}
-  \end{itemize}
+  \section*{Modelo tradicional}
+  \begin{tcolorbox}[colback=openaccess!5!white,colframe=openaccess!75!black,boxsep=1cm,breakable,pad at break*=1cm]
+    \setlength{\parskip}{0.5cm}
+    %breakable
+    
+    $\downarrow$ Coste de publicación, maquetación y distribución VS $\uparrow$ coste de revistas.
+    
+    Bases de la carrera investigadora: publicaciones de calidad en revistas de calidad.
+    
+    Los investigadores revisan de forma voluntaria. Editoriales sacan beneficios elevados aprovechando el voluntariado (Elsevier, Springer).
 
+    Coste de la revista (precio por pág)
+    \begin{itemize}
+    \item The Annals of Mathematics: 0.13/pág
+    \item Elsevier: 1.30/pág
+    \end{itemize}
+
+    Escándalos de Elsevier:
+    \begin{itemize}
+    \item Citaciones mutuas de Elsevier con  Chaos, Solitions \& Fractals
+    \item Recibió dinero de farmacéuticas para publicar artículos
+    \end{itemize}
+  \end{tcolorbox}
 %  \begin{figure}[p!]
   %   \centering
   \section*{Timeline del Open Access}
@@ -192,6 +201,10 @@
   %  \caption{Una caption}
   %\end{figure}
 
+  \flushleft
+  \includegraphics[width=0.8\columnwidth]{../doaj_years.png}
+
+  {\small Total de OAJs listados en el \textit{Directory of Open Access Journals} \\ desde su creación en 2002. Datos de \url{https://doaj.org/csv}}
 
 \end{multicols}
 \end{document}
