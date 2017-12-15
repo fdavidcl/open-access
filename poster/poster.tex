@@ -41,12 +41,19 @@
 % Timeline
 \usepackage{colortbl}
 \DeclareCaptionFont{blue}{\color{openaccess}}
-\newcommand{\foo}{\color{openaccess}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{1em}}
+\newcommand{\foo}{\color{openaccess}\makebox[0pt]{\Large\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{1em}}
 \renewcommand\arraystretch{1.4}\arrayrulecolor{openaccess}
 
 \usepackage[utf8x]{inputenc} %tildes
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
+
+\usepackage{fontspec}
+\setsansfont{Fira Sans}
+\setmainfont{Crimson Text}
+
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
 
 \definecolor{openaccess}{RGB}{246,141,10}
 \definecolor{oldgold}{rgb}{0.81, 0.71, 0.23}
@@ -55,6 +62,8 @@
 \definecolor{kellygreen}{rgb}{0.3, 0.73, 0.09}
 
 \newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+
+\usepackage{wrapfig}
 
 \begin{document}
 
@@ -67,22 +76,24 @@
 % The second is 25% wide and houses a logo for your university/organization or a photo of you
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
-\begin{minipage}[b]{1\linewidth}
-  \VeryHuge \color{openaccess} \textbf{Open Access: revisión histórica y situación actual} \color{Black}\\ % Title
+\begin{minipage}[t]{0.7\linewidth}
+  \vspace{0pt}
+  \flushleft
+  \VeryHuge \color{openaccess} \textbf{\sffamily Open Access: revisión histórica y situación actual} \color{Black}
+  \\ % Title
   %\Huge\textit{Country Update}\\[2.4cm] % Subtitle
 
   \vspace{1cm} % A bit of extra whitespace between the header and poster content
-
-  \huge \textbf{Cristina Heredia}\\[0.6cm] % Author(s)
-  \huge \textbf{David Charte}\\[0.5cm] % advisor
-  \huge \textbf{Alejandro Alcalde} \\[0.5cm] % University/organization
+  \large \textbf{Cristina Heredia, David Charte, Alejandro Alcalde}\\[0.5cm] % Author(s)
+  \large Departamento de Ciencias de la Computación e Inteligencia Artificial, Universidad de Granada\\[0.5cm] % advisor
+%  \large \textbf{Alejandro Alcalde} \\[0.5cm] % University/organization
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.15\textwidth}
+  \vspace{0.5em}
+  \centering\includegraphics[width=0.60\textwidth]{openaccess_logo.png}
 \end{minipage}
 %
-\begin{minipage}[b]{0.25\linewidth}
-  %\includegraphics[width=7cm]{ros.png}\
-  %\includegraphics[width=7cm]{images.jpg}\\
-\end{minipage}
-
 \vspace{1cm} % A bit of extra whitespace between the header and poster content
 
 %----------------------------------------------------------------------------------------
