@@ -39,13 +39,16 @@
 
 \usepackage[utf8x]{inputenc} %tildes
 \usepackage[T1]{fontenc}
-\usepackage[hmargin=3cm,vmargin=2cm]{geometry}
-%\usepackage[dvipsnames*,svgnames]{xcolor}
-\usepackage[most]{tcolorbox}
-\usepackage{varwidth}
+\usepackage{tikz}
 
+\definecolor{openaccess}{RGB}{246,141,10}
+\definecolor{oldgold}{rgb}{0.81, 0.71, 0.23}
+\definecolor{palegreen}{rgb}{0.6, 0.98, 0.6}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\definecolor{kellygreen}{rgb}{0.3, 0.73, 0.09}
 
-  
+\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -88,15 +91,36 @@
   %----------------------------------------------------------------------------------------
   %   Introduction
   %----------------------------------------------------------------------------------------
-
-  \color{Black} % SaddleBrown color for the introduction
+\color{Black} % SaddleBrown color for the introduction
   \section*{Introducción}
   \begin{itemize}
-  \item s
+  \item En 1665 aparecen primeras revistas, a los autores no se les pagaba por publicar en ellas.
+  \item Ya que éstas se hicieron populares, los autores siguieron publicando en ellas, por impacto más que por dinero.
+  \item \textbf{Problema:} Los precios comenzaron a subir hasta hacerse inasequibles. Hasta la aparición de internet como alternativa. Sin embargo, las revistas siguen cobrando demasiado en la actualizad, a pesar de no tener a penas gastos de publicación y edición.
+  \end{itemize}
+
+  \section*{Open Access (OA)}
+  \begin{itemize}
+  \item Tras la llegada de internet, nació \textbf{Open Access}, una forma de \textbf{acceder a la información}, no un \textbf{modelo de negocio}. Permite acceder a la información de \textbf{forma gratuita}. NO es incompatible con el uso de CopyRight.
+  \item Alternativa al modelo tradicional, donde los autores a veces \textbf{pagan} por publicar y los lectores también deben \textbf{pagar} por acceder a las publicaciones.
+  \item \textit{Formas de fomentar OA}
+    \begin{itemize}
+    \item Dejar una copia del artículo en un repositorio OA (\textbf{arXiv}).
+    \item Publicar en revistas OA (\textbf{BioMed, Public Library of Science}).
+    \item Subir una copia del artículo original a una web personal.
+    \item Publicar en revistas híbridas, donde el autor paga para hacer el artículo OA.
+    \end{itemize}
+  \item Las revistas OA siguen un código de colores:
+    \begin{itemize}
+    \item[] \tikzcircle[oldgold, fill=oldgold]{50pt} Acceso libre sin retraso.
+    \item[] \tikzcircle[kellygreen, fill=kellygreen]{50pt} Permite el archivo de trabajos ya publicados.
+    \item[] \tikzcircle[palegreen, fill=palegreen]{50pt} Permite el archivo de trabajos que se han mandado a revisión pero aún no publicados.
+    \item[] \tikzcircle[gray, fill=gray]{50pt} Indica que no cumple ninguna de las anteriores.
+    \end{itemize}
   \end{itemize}
 
 
-  %----------------------------------------------------------------------------------------
+ %----------------------------------------------------------------------------------------
   %   OBJECTIVES
   %----------------------------------------------------------------------------------------
 
@@ -124,67 +148,31 @@
   	\item recibió dinero de farmaceuticas para publicar artículos
   	\end{itemize}
   \end{itemize}
-	
-%\framebox[1.1\width]{\normalsize\textbf{The Annals of Mathematics}\newline \text{hola}} \framebox[1.1\width]{Guess I’m framed now!} 
 
-%\colorbox{black!85}{\makebox[4em]{\strut\textcolor{white}{0.13}}}
-%\colorbox{black!85}{\makebox[4em]{\strut\textcolor{white}{1.30}}}
-	 
+%  \begin{figure}[p!]
+  %   \centering
+  \section*{Timeline del Open Access}
+  %\includegraphics[width=0.9\columnwidth]{timeline.pdf}
+  \begin{tabular}{@{\,}r <{\hskip 1em} !{\foo} >{\raggedright\arraybackslash}p{20em}}
+%\toprule
+  \addlinespace[1.5ex]
+  1665 & Primeras revistas científicas (Londres, París)\vspace{5em}\\
+  1987 & Primera revista Open Access online: \textit{New Horizons in Adult Education}\vspace{5em}\\
+  2002 & Publicación de la \textit{Budapest Open Access Initiative}\\
+  2002 & Creación del \textit{Directory of Open Access Journals}\vspace{5em}\\
+  2008 & Publicación del \textit{Guerilla Open Access Manifesto} (Aaron Swartz)\vspace{2em}\\
+  2011 & Creación de Sci-Hub (Alexandra Elbakyan)\\
+  2012 & Boicot a Elsevier: \textit{The Cost of Knowledge}\\
+  2012 & Legislación del Reino Unido para liberar la investigación del Department for International Development\\
+  2013 & Estados Unidos aprueba el \textit{Fair Access to Science and Technology Research Act}\vspace{1em}\\
+  2015 & Boicot a  \textit{Lingua} de su equipo editorial\\
+  2016 & Llamada a la acción de Amsterdan para la ciencia abierta en Europa\\
+  2017 & Más de 10000 revistas Open Access en el DOAJ\vspace{2em}\\
+  2020 & Todas las publicaciones científicas financiadas públicamente en la UE podrían ser de libre acceso\\
+  \end{tabular}
 
-  %------------------------------------------------
-  %----------------------------------------------------------------------------------------
-  %   DESIGN
-  %----------------------------------------------------------------------------------------
-  \section*{Design}
-  \begin{center}\vspace{1cm}
-    %\includegraphics[width=1\linewidth]{a2}
-  \end{center}%\vspace{1cm}
-
-  %----------------------------------------------------------------------------------------
-  %   How It should Work
-  %----------------------------------------------------------------------------------------
-
-  \color{Black} % DarkSlateGray color for the rest of the content
-
-  \section*{How It should Work}
-
-  \begin{center}\vspace{1cm}
-    %\includegraphics[width=1\linewidth]{a1}
-    %\captionof{figure}{\color{Green} Having 2 groups of agents in the environment, the navigator should detect which one is more similar to it and move accordingly}
-  \end{center}
-  \vspace{1cm}
-
-  %----------------------------------------------------------------------------------------
-  %   ROS FRAMEWORK
-  %----------------------------------------------------------------------------------------
-  \section*{ROS}
-  \subsection*{What is ROS?}
-  \begin{itemize}
-  \item Set of software libraries and tools to help build robot applications
-  \item Provides drivers, algorithms and useful tools for robotics project
-  \item The whole simulation is done using the ROS framework
-  \end{itemize}
-  \subsection*{Simulation on ROS framework}
-  \subsubsection*{Tools provided by ROS}
-  \begin{itemize}
-  \item laser sensor: added as part of robot's definition - replaces actual laser sensor
-  \item topics: kind of a message board for sharing data (speed, distance and direction of each agent in the environment) - replaces camera
-  \item world files: allows to create a costume environment
-  \item stage: simulator
-  \end{itemize}
-
-  %\includegraphics[width=0.5\linewidth]{start_pos.png}\vspace{1cm}
-  %\includegraphics[width=0.5\linewidth]{with_stats.png}\vspace{1cm}
-  %\includegraphics[width=1\linewidth]{0.png}
-
-  \begin{itemize}
-  \item Left: Starting position of a stage simulation with an empty square world file
-  \item Right: Same simulation, showing stats (name, location and direction) of agent 0
-  \item Bottom: RQT-Graph - another tool of ROS, showing the frames in the simulation and the connections between them
-  \end{itemize}
-
-
-
+  %  \caption{Una caption}
+  %\end{figure}
 
 
 \end{multicols}
