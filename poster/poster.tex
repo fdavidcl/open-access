@@ -20,27 +20,35 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[a0,portrait]{a0poster}
+\usepackage[fontsize=35]{scrextend}
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
-\columnsep=100pt % This is the amount of white space between the columns in the poster
-\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+\columnsep=6em % This is the amount of white space between the columns in the poster
+\columnseprule=0.5pt % This is the thickness of the black line between the columns in the poster
 
 \usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
-\usepackage{times} % Use the times font
-%\usepackage{palatino} % Uncomment to use the Palatino font
+% \usepackage{times} % Use the times font
+\usepackage{palatino} % Uncomment to use the Palatino font
 
 \usepackage{graphicx} % Required for including images
-\graphicspath{{figures/}} % Location of the graphics files
+
 \usepackage{booktabs} % Top and bottom rules for table
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
 
+% Timeline
+\usepackage{colortbl}
+\DeclareCaptionFont{blue}{\color{openaccess}}
+\newcommand{\foo}{\color{openaccess}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{1em}}
+\renewcommand\arraystretch{1.4}\arrayrulecolor{openaccess}
+
 \usepackage[utf8x]{inputenc} %tildes
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
 
+\definecolor{openaccess}{RGB}{246,141,10}
 \definecolor{oldgold}{rgb}{0.81, 0.71, 0.23}
 \definecolor{palegreen}{rgb}{0.6, 0.98, 0.6}
 \definecolor{gray}{rgb}{0.5, 0.5, 0.5}
@@ -60,7 +68,7 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[b]{1\linewidth}
-  \VeryHuge \color{NavyBlue} \textbf{Open Access: revisión histórica y situación actual} \color{Black}\\ % Title
+  \VeryHuge \color{openaccess} \textbf{Open Access: revisión histórica y situación actual} \color{Black}\\ % Title
   %\Huge\textit{Country Update}\\[2.4cm] % Subtitle
 
   \vspace{1cm} % A bit of extra whitespace between the header and poster content
@@ -124,71 +132,30 @@
   %   OBJECTIVES
   %----------------------------------------------------------------------------------------
 
-  \color{Black} % SaddleBrown color for the introduction
-  \section*{Project's Objectives}
-  %
-  \begin{itemize}
-  \item Gather information on other agents in environment based on
-    \begin{itemize}
-    \item speed
-    \item direction
-    \item distance
-    \end{itemize}
-  \item Synchronize movement with similar agents
-  \item Move while avoiding obstacles (e.g. walls, other robots)
-  \end{itemize}
+%  \begin{figure}[p!]
+  %   \centering
+  \section*{Timeline del Open Access}
+  %\includegraphics[width=0.9\columnwidth]{timeline.pdf}
+  \begin{tabular}{@{\,}r <{\hskip 1em} !{\foo} >{\raggedright\arraybackslash}p{20em}}
+%\toprule
+  \addlinespace[1.5ex]
+  1665 & Primeras revistas científicas (Londres, París)\vspace{5em}\\
+  1987 & Primera revista Open Access online: \textit{New Horizons in Adult Education}\vspace{5em}\\
+  2002 & Publicación de la \textit{Budapest Open Access Initiative}\\
+  2002 & Creación del \textit{Directory of Open Access Journals}\vspace{5em}\\
+  2008 & Publicación del \textit{Guerilla Open Access Manifesto} (Aaron Swartz)\vspace{2em}\\
+  2011 & Creación de Sci-Hub (Alexandra Elbakyan)\\
+  2012 & Boicot a Elsevier: \textit{The Cost of Knowledge}\\
+  2012 & Legislación del Reino Unido para liberar la investigación del Department for International Development\\
+  2013 & Estados Unidos aprueba el \textit{Fair Access to Science and Technology Research Act}\vspace{1em}\\
+  2015 & Boicot a  \textit{Lingua} de su equipo editorial\\
+  2016 & Llamada a la acción de Amsterdan para la ciencia abierta en Europa\\
+  2017 & Más de 10000 revistas Open Access en el DOAJ\vspace{2em}\\
+  2020 & Todas las publicaciones científicas financiadas públicamente en la UE podrían ser de libre acceso\\
+  \end{tabular}
 
-  %------------------------------------------------
-  %----------------------------------------------------------------------------------------
-  %   DESIGN
-  %----------------------------------------------------------------------------------------
-  \section*{Design}
-  \begin{center}\vspace{1cm}
-    %\includegraphics[width=1\linewidth]{a2}
-  \end{center}%\vspace{1cm}
-
-  %----------------------------------------------------------------------------------------
-  %   How It should Work
-  %----------------------------------------------------------------------------------------
-
-  \color{Black} % DarkSlateGray color for the rest of the content
-
-  \section*{How It should Work}
-
-  \begin{center}\vspace{1cm}
-    %\includegraphics[width=1\linewidth]{a1}
-    %\captionof{figure}{\color{Green} Having 2 groups of agents in the environment, the navigator should detect which one is more similar to it and move accordingly}
-  \end{center}
-  \vspace{1cm}
-
-  %----------------------------------------------------------------------------------------
-  %   ROS FRAMEWORK
-  %----------------------------------------------------------------------------------------
-  \section*{ROS}
-  \subsection*{What is ROS?}
-  \begin{itemize}
-  \item Set of software libraries and tools to help build robot applications
-  \item Provides drivers, algorithms and useful tools for robotics project
-  \item The whole simulation is done using the ROS framework
-  \end{itemize}
-  \subsection*{Simulation on ROS framework}
-  \subsubsection*{Tools provided by ROS}
-  \begin{itemize}
-  \item laser sensor: added as part of robot's definition - replaces actual laser sensor
-  \item topics: kind of a message board for sharing data (speed, distance and direction of each agent in the environment) - replaces camera
-  \item world files: allows to create a costume environment
-  \item stage: simulator
-  \end{itemize}
-
-  %\includegraphics[width=0.5\linewidth]{start_pos.png}\vspace{1cm}
-  %\includegraphics[width=0.5\linewidth]{with_stats.png}\vspace{1cm}
-  %\includegraphics[width=1\linewidth]{0.png}
-
-  \begin{itemize}
-  \item Left: Starting position of a stage simulation with an empty square world file
-  \item Right: Same simulation, showing stats (name, location and direction) of agent 0
-  \item Bottom: RQT-Graph - another tool of ROS, showing the frames in the simulation and the connections between them
-  \end{itemize}
+  %  \caption{Una caption}
+  %\end{figure}
 
 
 
