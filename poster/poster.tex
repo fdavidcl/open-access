@@ -20,19 +20,19 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[a0,portrait]{a0poster}
-\usepackage[fontsize=35]{scrextend}
+
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
-\columnsep=6em % This is the amount of white space between the columns in the poster
-\columnseprule=0.5pt % This is the thickness of the black line between the columns in the poster
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
 
 \usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
-% \usepackage{times} % Use the times font
-\usepackage{palatino} % Uncomment to use the Palatino font
+\usepackage{times} % Use the times font
+%\usepackage{palatino} % Uncomment to use the Palatino font
 
 \usepackage{graphicx} % Required for including images
-
+\graphicspath{{figures/}} % Location of the graphics files
 \usepackage{booktabs} % Top and bottom rules for table
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
@@ -109,8 +109,7 @@
   %----------------------------------------------------------------------------------------
   %   Introduction
   %----------------------------------------------------------------------------------------
-
-  \color{Black} % SaddleBrown color for the introduction
+\color{Black} % SaddleBrown color for the introduction
   \section*{Introducción}
   \begin{itemize}
   \item En 1665 aparecen primeras revistas, a los autores no se les pagaba por publicar en ellas.
@@ -139,9 +138,34 @@
   \end{itemize}
 
 
-  %----------------------------------------------------------------------------------------
+ %----------------------------------------------------------------------------------------
   %   OBJECTIVES
   %----------------------------------------------------------------------------------------
+
+  \color{Black} % SaddleBrown color for the introduction
+  \section*{Modelo tradicional: problemática y escándalos}
+  %
+  \begin{itemize}
+  \item $\downarrow$ Coste de publicación, maquetación y distribución VS $\uparrow$ coste de revistas
+  \item Bases de la carrera investigadora:
+    \begin{itemize}
+    \item publicacionesde calidad 
+    \item en revistas de calidad
+    \end{itemize}
+  \item Los investigadores revisan de forma voluntaria
+  \item Editoriales sacan beneficios elevados aprovechando el voluntariado (Elsevier, Springer) 
+  \item Boicot a Elsevier por varios investigadores
+  \item Coste de la revista (precio por pág)
+ \begin{itemize}
+    \item The Annals of Mathematics- 0.13/pág
+    \item Elsevier -1.30/pág
+    \end{itemize}
+  \item Escándalos de Elsevier:
+    \begin{itemize}
+  	\item citaciones mutuas de Elsevier con  Chaos, Solitions \& Fractals
+  	\item recibió dinero de farmaceuticas para publicar artículos
+  	\end{itemize}
+  \end{itemize}
 
 %  \begin{figure}[p!]
   %   \centering
@@ -167,9 +191,6 @@
 
   %  \caption{Una caption}
   %\end{figure}
-
-
-
 
 
 \end{multicols}
