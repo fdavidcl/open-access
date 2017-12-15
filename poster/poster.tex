@@ -49,20 +49,20 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[b]{1\linewidth}
-\VeryHuge \color{NavyBlue} \textbf{Autonomous robot navigation in mixed environment} \color{Black}\\ % Title
-%\Huge\textit{Country Update}\\[2.4cm] % Subtitle
+  \VeryHuge \color{NavyBlue} \textbf{Autonomous robot navigation in mixed environment} \color{Black}\\ % Title
+  %\Huge\textit{Country Update}\\[2.4cm] % Subtitle
 
-\vspace{1cm} % A bit of extra whitespace between the header and poster content
+  \vspace{1cm} % A bit of extra whitespace between the header and poster content
 
-\huge \textbf{Avi Naftalis}\\[0.6cm] % Author(s)
-\huge Advisor: Proffesor Gal Kaminka \\[0.5cm] % advisor
-\huge Bar-Ilan university, department of computer science \\[0.5cm] % University/organization
-%\Large \texttt{saibi-hakim@mine.kyushu-u.ac.jp} --- +81 (092) 802 3316\\
+  \huge \textbf{Avi Naftalis}\\[0.6cm] % Author(s)
+  \huge Advisor: Proffesor Gal Kaminka \\[0.5cm] % advisor
+  \huge Bar-Ilan university, department of computer science \\[0.5cm] % University/organization
+  %\Large \texttt{saibi-hakim@mine.kyushu-u.ac.jp} --- +81 (092) 802 3316\\
 \end{minipage}
 %
 \begin{minipage}[b]{0.25\linewidth}
-%\includegraphics[width=7cm]{ros.png}\
-%\includegraphics[width=7cm]{images.jpg}\\
+  %\includegraphics[width=7cm]{ros.png}\
+  %\includegraphics[width=7cm]{images.jpg}\\
 \end{minipage}
 
 \vspace{1cm} % A bit of extra whitespace between the header and poster content
@@ -71,98 +71,98 @@
 
 \begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
 
-%----------------------------------------------------------------------------------------
-%   ABSTRACT
-%----------------------------------------------------------------------------------------
+  %----------------------------------------------------------------------------------------
+  %   ABSTRACT
+  %----------------------------------------------------------------------------------------
 
-%\color{Navy} % Navy color for the abstract
+  %\color{Navy} % Navy color for the abstract
 
-%\begin{abstract}
-%The electrical energy from renewables in Algeria contributed about 3.4\% (280 MW) in 2008 of a total power of 8.1 GWe and will reach 5\% by the year 2017 according to the Algerian Electricity and Gas Regulation Commission (CREG). The country’s target is reaching 40\% by 2030. The geothermal resources in Algeria are of low-enthalpy type. Most of these geothermal resources are located in the north of the country and generate a heat discharge of 240 MWt.
-%\end{abstract}
-
-
-%----------------------------------------------------------------------------------------
-%   Introduction
-%----------------------------------------------------------------------------------------
-
-\color{Black} % SaddleBrown color for the introduction
-\section*{Introduction}
-\begin{itemize}
-\item Models of crowd behavior predict human group behavior
-\item Implementing such model (SCT- Social comparison Theory) using ROS
-\end{itemize}
+  %\begin{abstract}
+  %The electrical energy from renewables in Algeria contributed about 3.4\% (280 MW) in 2008 of a total power of 8.1 GWe and will reach 5\% by the year 2017 according to the Algerian Electricity and Gas Regulation Commission (CREG). The country’s target is reaching 40\% by 2030. The geothermal resources in Algeria are of low-enthalpy type. Most of these geothermal resources are located in the north of the country and generate a heat discharge of 240 MWt.
+  %\end{abstract}
 
 
-%----------------------------------------------------------------------------------------
-%   OBJECTIVES
-%----------------------------------------------------------------------------------------
+  %----------------------------------------------------------------------------------------
+  %   Introduction
+  %----------------------------------------------------------------------------------------
 
-\color{Black} % SaddleBrown color for the introduction
-\section*{Project's Objectives}
-%
-\begin{itemize}
-\item Gather information on other agents in environment based on
-\begin{itemize}
-\item speed
-\item direction
-\item distance
-\end{itemize}
-\item Synchronize movement with similar agents
-\item Move while avoiding obstacles (e.g. walls, other robots)
-\end{itemize}
+  \color{Black} % SaddleBrown color for the introduction
+  \section*{Introduction}
+  \begin{itemize}
+  \item Models of crowd behavior predict human group behavior
+  \item Implementing such model (SCT- Social comparison Theory) using ROS
+  \end{itemize}
 
-%------------------------------------------------
-%----------------------------------------------------------------------------------------
-%   DESIGN
-%----------------------------------------------------------------------------------------
-\section*{Design}
-\begin{center}\vspace{1cm}
-%\includegraphics[width=1\linewidth]{a2}
-\end{center}%\vspace{1cm}
 
-%----------------------------------------------------------------------------------------
-%   How It should Work
-%----------------------------------------------------------------------------------------
+  %----------------------------------------------------------------------------------------
+  %   OBJECTIVES
+  %----------------------------------------------------------------------------------------
 
-\color{Black} % DarkSlateGray color for the rest of the content
+  \color{Black} % SaddleBrown color for the introduction
+  \section*{Project's Objectives}
+  %
+  \begin{itemize}
+  \item Gather information on other agents in environment based on
+    \begin{itemize}
+    \item speed
+    \item direction
+    \item distance
+    \end{itemize}
+  \item Synchronize movement with similar agents
+  \item Move while avoiding obstacles (e.g. walls, other robots)
+  \end{itemize}
 
-\section*{How It should Work}
+  %------------------------------------------------
+  %----------------------------------------------------------------------------------------
+  %   DESIGN
+  %----------------------------------------------------------------------------------------
+  \section*{Design}
+  \begin{center}\vspace{1cm}
+    %\includegraphics[width=1\linewidth]{a2}
+  \end{center}%\vspace{1cm}
 
-\begin{center}\vspace{1cm}
-%\includegraphics[width=1\linewidth]{a1}
-%\captionof{figure}{\color{Green} Having 2 groups of agents in the environment, the navigator should detect which one is more similar to it and move accordingly}
-\end{center}
-\vspace{1cm}
+  %----------------------------------------------------------------------------------------
+  %   How It should Work
+  %----------------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-%   ROS FRAMEWORK
-%----------------------------------------------------------------------------------------
-\section*{ROS}
-\subsection*{What is ROS?}
-\begin{itemize}
-\item Set of software libraries and tools to help build robot applications
-\item Provides drivers, algorithms and useful tools for robotics project
-\item The whole simulation is done using the ROS framework
-\end{itemize}
-\subsection*{Simulation on ROS framework}
-\subsubsection*{Tools provided by ROS}
-\begin{itemize}
-\item laser sensor: added as part of robot's definition - replaces actual laser sensor
-\item topics: kind of a message board for sharing data (speed, distance and direction of each agent in the environment) - replaces camera
-\item world files: allows to create a costume environment
-\item stage: simulator
-\end{itemize}
+  \color{Black} % DarkSlateGray color for the rest of the content
 
-%\includegraphics[width=0.5\linewidth]{start_pos.png}\vspace{1cm}
-%\includegraphics[width=0.5\linewidth]{with_stats.png}\vspace{1cm}
-%\includegraphics[width=1\linewidth]{0.png}
+  \section*{How It should Work}
 
-\begin{itemize}
-\item Left: Starting position of a stage simulation with an empty square world file
-\item Right: Same simulation, showing stats (name, location and direction) of agent 0
-\item Bottom: RQT-Graph - another tool of ROS, showing the frames in the simulation and the connections between them
-\end{itemize}
+  \begin{center}\vspace{1cm}
+    %\includegraphics[width=1\linewidth]{a1}
+    %\captionof{figure}{\color{Green} Having 2 groups of agents in the environment, the navigator should detect which one is more similar to it and move accordingly}
+  \end{center}
+  \vspace{1cm}
+
+  %----------------------------------------------------------------------------------------
+  %   ROS FRAMEWORK
+  %----------------------------------------------------------------------------------------
+  \section*{ROS}
+  \subsection*{What is ROS?}
+  \begin{itemize}
+  \item Set of software libraries and tools to help build robot applications
+  \item Provides drivers, algorithms and useful tools for robotics project
+  \item The whole simulation is done using the ROS framework
+  \end{itemize}
+  \subsection*{Simulation on ROS framework}
+  \subsubsection*{Tools provided by ROS}
+  \begin{itemize}
+  \item laser sensor: added as part of robot's definition - replaces actual laser sensor
+  \item topics: kind of a message board for sharing data (speed, distance and direction of each agent in the environment) - replaces camera
+  \item world files: allows to create a costume environment
+  \item stage: simulator
+  \end{itemize}
+
+  %\includegraphics[width=0.5\linewidth]{start_pos.png}\vspace{1cm}
+  %\includegraphics[width=0.5\linewidth]{with_stats.png}\vspace{1cm}
+  %\includegraphics[width=1\linewidth]{0.png}
+
+  \begin{itemize}
+  \item Left: Starting position of a stage simulation with an empty square world file
+  \item Right: Same simulation, showing stats (name, location and direction) of agent 0
+  \item Bottom: RQT-Graph - another tool of ROS, showing the frames in the simulation and the connections between them
+  \end{itemize}
 
 
 
